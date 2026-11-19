@@ -1,0 +1,24 @@
+{
+  "$schema": "https://modelcontextprotocol.io",
+  "name": "io.github.rabdullahkhan161-collab/rankpulseseo",
+  "description": "Live Google SERP data, top-100 keyword rank tracking, technical on-page SEO audits, and robots.txt inspection.",
+  "repository": {
+    "url": "https://github.com",
+    "source": "github"
+  },
+  "version": "1.0.0",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://vercel.app",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Bearer sk_live_... API key from rankpulseseo-mcp.vercel.app (20 free trial credits included)",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}
