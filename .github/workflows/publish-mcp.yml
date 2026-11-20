@@ -9,14 +9,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.23'
       - name: Install mcp-publisher
-        run: |
-          URL=$(curl -s "https://github.com" | jq -r '[.[].assets[] | select(.name | test("linux.*(amd64|x86_64)"))][0].browser_download_url')
-          echo "Downloading from: $URL"
-          curl -fL "$URL" -o mcp-publisher.tar.gz
-          tar -xzf mcp-publisher.tar.gz mcp-publisher
-          chmod +x mcp-publisher
+        run: go install ://github.com
       - name: Authenticate & Publish
         run: |
-          ./mcp-publisher login github-oidc
-          ./mcp-publisher publish
+          mcp-publisher login github-oidc
+          mcp-publisher publish
