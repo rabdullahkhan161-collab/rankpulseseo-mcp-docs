@@ -14,7 +14,7 @@
       "headers": [
         {
           "name": "Authorization",
-          "description": "Bearer sk_live_... API key from rankpulseseo-mcp.vercel.app (20 free trial credits included)",
+          "description": "Live Google SERP data, top-100 keyword rank tracking, and on-page technical SEO audits.",
           "isRequired": true,
           "isSecret": true
         }
